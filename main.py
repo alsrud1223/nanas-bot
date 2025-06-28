@@ -1,10 +1,8 @@
-from keep_alive import keep_alive
-keep_alive()
-
+import os
 import discord
 from discord.ext import commands
 
-TOKEN = "YOUR_DISCORD_BOT_TOKEN"
+TOKEN = os.environ['TOKEN']  # Render 환경변수에서 불러오기
 bot = commands.Bot(command_prefix="!")
 
 @bot.event
