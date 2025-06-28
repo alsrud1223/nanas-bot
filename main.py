@@ -1,6 +1,22 @@
+from flask import Flask
+from threading import Thread
 import os
 import discord
 from discord.ext import commands
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I'm alive!"
+
+def run():
+    port = int(os.environ.get("PORT", 8080))  # Render가 감지할 포트
+    app.run(host='0.0.0.0', port=port)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
 
 # 환경변수에서 토큰, 비밀번호, 역할 이름 불러오기
 TOKEN = os.environ['TOKEN']
@@ -52,5 +68,7 @@ async def on_member_join(member):
 @bot.event
 async def on_ready():
     print(f'✅ 봇 로그인됨: {bot.user}')
+
+keep_alive()
 
 bot.run(TOKEN)
