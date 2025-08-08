@@ -67,7 +67,7 @@ async def on_member_join(member):
 
 @bot.event
 async def on_ready():
-    print(f'✅ 봇 로그인됨: {bot.user}')
+    print(f'✅ 로그인됨: {bot.user}')
 
 keep_alive()
 
