@@ -21,7 +21,7 @@ def keep_alive():
 # 환경변수에서 토큰, 비밀번호, 역할 이름 불러오기
 TOKEN = os.environ['TOKEN']
 PASSWORD = os.environ.get('PASSWORD', '1223')  # 기본값 설정 가능
-ROLE_NAME = os.environ.get('ROLE_NAME', 'ᗦ↞◃')      # 기본 역할 이름
+ROLE_NAME = os.environ.get('ROLE_NAME', '₍ᐢ..ᐢ₎')      # 기본 역할 이름
 
 # 인텐트 설정 (멤버 입장 이벤트와 메시지 콘텐츠 읽기 허용)
 intents = discord.Intents.default()
